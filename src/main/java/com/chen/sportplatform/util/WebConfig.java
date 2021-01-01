@@ -24,6 +24,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 .allowedOrigins("http://localhost:8083", "null")
                 .allowedMethods("GET", "POST", "PUT", "OPTIONS", "DELETE")
                 .allowCredentials(true)
+                .allowedHeaders("*")
                 .maxAge(3600);
     }
 }

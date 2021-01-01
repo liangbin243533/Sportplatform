@@ -5,4 +5,38 @@
     <select id="getUserByMessage" resultType="com.chen.sportplatform.entity.User">
         select * from user where username=#{username} and password=#{password} and state=1
     </select>
+    <select id="getAllUser" resultType="com.chen.sportplatform.entity.User">
+        select * from user
+        <if test="username != null ">
+            where username like #{username}
+        </if>
+        LIMIT #{pageStart}, #{pageSize}
+    </select>
+    <select id="getUserCounts" resultType="java.lang.Integer">
+        select count(*) from user
+        <if test="username != null ">
+            where username like #{username}
+        </if>
+    </select>
+    <update id="updateState">
+        update user set state = #{state} where id = #{id}
+    </update>
+    <insert id="addUser">
+        insert into user (username, password, email, role, state)
+        value (#{username}, #{password}, #{email}, #{role}, #{state})
+    </insert>
+    <delete id="deleteUser">
+        delete from user where id = #{id}
+    </delete>
+    <select id="getUpdateUser" resultType="com.chen.sportplatform.entity.User">
+        select * from user where where id = #{id}
+    </select>
+    <update id="updateUser">
+        update user set username = #{username},
+                        password = #{password},
+                        email = #{email},
+                        role = #{role},
+                        state = #{state}
+        where id = #{id}
+    </update>
 </mapper>
