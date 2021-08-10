@@ -1,5 +1,6 @@
 # Sportplatform
-1.It is a Springboot project demo and there are still some models to complete.Front-end and backe-end are seperated. 2.Regarding cross-domain request issues, I use global confiration to handle @Configuration public class WebConfig extends WebMvcConfigurerAdapter {
+1.It is a Springboot project demo and there are still some models to complete.Front-end and backe-end are seperated. 
+2.Regarding cross-domain request issues, I use global confiration to handle @Configuration public class WebConfig extends WebMvcConfigurerAdapter {
 
 @Override
 public void addCorsMappings(CorsRegistry registry) {
